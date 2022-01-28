@@ -1,0 +1,25 @@
+.footer {
+  background-color: var(--dark-grey);
+  width: 100%;
+  height: 4rem;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+.footer form {
+  height: 50%;
+}
+
+.footer input {
+  background-color: var(--lighter-grey);
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  color: var(--light-grey);
+  font-size: 16px;
+  padding: 0 1rem;
+}

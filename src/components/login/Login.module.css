@@ -1,0 +1,26 @@
+.container {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background-color: #f7f7f7;
+}
+
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5.5rem 3.5rem;
+  background-color: whtie;
+  box-shadow: 0rem 1px 14px -5px rgba(0, 0, 0, 0.7);
+  border-radius: 1rem;
+}
+.text {
+  margin-bottom: 2rem;
+}
+
+.logo {
+  width: 160px;
+  height: 160px;
+  margin-bottom: 3rem;
+}

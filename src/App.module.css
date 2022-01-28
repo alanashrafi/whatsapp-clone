@@ -1,0 +1,22 @@
+.App {
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--app-background);
+}
+.body {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--body-background);
+}
+
+@media screen and (min-width: 1440px) {
+  .body {
+    width: 1400px;
+    height: 97%;
+    margin-top: 20px;
+  }
+}

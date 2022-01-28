@@ -1,0 +1,35 @@
+.container {
+  width: 100% !important;
+  background-image: url('../../img/back1.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 1.5rem;
+  overflow-y: scroll;
+}
+.reciever {
+  position: relative;
+  background-color: var(--light-grey);
+  width: fit-content;
+  padding: 0.5rem;
+  border-radius: 0.6rem 0.5rem;
+  margin-bottom: 2rem;
+}
+.sender {
+  margin-left: auto;
+  background-color: chartreuse;
+}
+.time {
+  font-size: 10px;
+  padding-left: 2rem;
+  bottom: 0;
+  right: -3rem;
+}
+.owner {
+  position: absolute;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  top: -1.1rem;
+  left: 0.5rem;
+}
