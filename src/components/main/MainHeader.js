@@ -8,17 +8,17 @@ import { useParams } from 'react-router-dom';
 import db from '../../firebase/Firebase';
 import { onSnapshot, doc } from 'firebase/firestore';
 
-export default function MainHeader() {
-  const { roomId } = useParams();
-  const [roomName, setRoomName] = useState('');
+export default function MainHeader({ roomName }) {
+  // const { roomId } = useParams();
+  // const [roomName, setRoomName] = useState('');
 
-  useEffect(() => {
-    if (roomId) {
-      onSnapshot(doc(db, `rooms/${roomId}`), (snapshot) => {
-        setRoomName(snapshot.data().name);
-      });
-    }
-  }, [roomId]);
+  // useEffect(() => {
+  //   if (roomId) {
+  //     onSnapshot(doc(db, `rooms/${roomId}`), (snapshot) => {
+  //       setRoomName(snapshot.data().name);
+  //     });
+  //   }
+  // }, [roomId]);
 
   return (
     <div className={styles.header}>

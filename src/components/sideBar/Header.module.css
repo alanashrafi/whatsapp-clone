@@ -1,4 +1,5 @@
 .header {
+  position: relative;
   background-color: var(--dark-grey);
   width: 100%;
   height: 4rem;
@@ -13,4 +14,22 @@
   align-items: center;
   justify-content: space-between;
   width: 154px;
+}
+.popup {
+  position: absolute;
+  width: 8rem;
+  height: 9rem;
+  background-color: var(--light-grey);
+  z-index: 1;
+  right: 2rem;
+  bottom: -9rem;
+  border-radius: 0.5rem;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  align-items: center;
+  padding-left: 1rem;
+}
+.popup_item {
+  width: 100%;
+  margin-left: 1rem;
 }

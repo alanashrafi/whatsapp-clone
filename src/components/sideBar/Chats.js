@@ -2,30 +2,33 @@ import React, { useEffect, useState } from 'react';
 import Chat from './Chat';
 import styles from './Chats.module.css';
 import db from '../../firebase/Firebase';
-import { collection, onSnapshot } from 'firebase/firestore';
+import {
+  collection,
+  onSnapshot,
+  serverTimestamp,
+  query,
+  orderBy,
+} from 'firebase/firestore';
 
 export default function Chats() {
   const [rooms, setRooms] = useState([]);
 
-  const getData = async () => {
-    const roomRef = collection(db, 'rooms');
-    const unsub = onSnapshot(roomRef, (snapshot) => {
+  useEffect(() => {
+    const q = query(collection(db, 'rooms'), orderBy('timestamp', 'desc'));
+    const unsub = onSnapshot(q, (snapshot) => {
       setRooms(
         snapshot.docs.map((doc) => {
           return { id: doc.id, data: doc.data() };
         })
       );
     });
-  };
-
-  useEffect(() => {
-    getData();
+    return () => {
+      unsub();
+    };
   }, []);
 
   return (
     <div className={styles.chats}>
-      <Chat addChat />
-
       {rooms.map((room) => {
         return (
           <Chat
