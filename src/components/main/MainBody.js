@@ -1,16 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 import styles from './MainBody.module.css';
 import db from '../../firebase/Firebase';
-import {
-  collection,
-  doc,
-  onSnapshot,
-  query,
-  orderBy,
-} from 'firebase/firestore';
-import { useButton } from '@mui/material';
-
+import { collection, onSnapshot, query, orderBy } from 'firebase/firestore';
 export default function MainBody({ roomName, roomId }) {
   const [message, setMessage] = useState([]);
   useEffect(() => {
@@ -30,7 +21,10 @@ export default function MainBody({ roomName, roomId }) {
   return (
     <div className={styles.container}>
       {message.map((mes) => (
-        <div className={`${styles.reciever} ${styles.sender}`}>
+        <div
+          className={`${styles.reciever} ${styles.sender}`}
+          key={mes.user + mes.message}
+        >
           <span className={styles.owner}>{mes.user}</span>
           <p>{mes.message}</p>
           {/* <span className={styles.time}>

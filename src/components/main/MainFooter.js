@@ -6,14 +6,17 @@ import IconButton from '@mui/material/IconButton';
 import MicIcon from '@mui/icons-material/Mic';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 import MoodOutlinedIcon from '@mui/icons-material/MoodOutlined';
+import useAuthUser from '../../hooks/useAuthUser';
+
 export default function MainFooter({ roomId }) {
   const [input, setInput] = useState('');
+  const user = useAuthUser().displayName;
 
   const sendMessage = async (e) => {
     e.preventDefault();
     const q = collection(db, 'rooms', roomId, 'messages');
     await addDoc(q, {
-      user: 'd',
+      user: user,
       message: input,
       timestamp: serverTimestamp(),
     });
